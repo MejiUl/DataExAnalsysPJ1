@@ -30,4 +30,5 @@ with(powerhouse, lines(DateTime, Sub_metering_2, type="l",  col="red"))
 with(powerhouse, lines(DateTime, Sub_metering_3, type="l",  col="blue"))
 legend("topright", pch="____", col=c("black","red","blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), border="white")
 with(powerhouse, plot(DateTime, Global_reactive_power, type="l", ylab="Global Rective Power (kilowatts)", xlab="dateTime"))
-
+dev.copy(png, file="plot4.png")
+dev.off()

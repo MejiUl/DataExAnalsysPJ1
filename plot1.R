@@ -1,5 +1,5 @@
 #We read all the rows in the file
-powerhouse <- read.table("household_power_consumption.txt", sep=";",  header=TRUE, as.is=TRUE)
+powerhouse <- read.table("../household_power_consumption.txt", sep=";",  header=TRUE, as.is=TRUE)
 
 #We match the strings that are between 1-2 of february to subset
 flag <- grepl("^[1-2]/2/2007", powerhouse$Date)
@@ -17,7 +17,8 @@ powerhouse$Global_active_power <- as.numeric(powerhouse$Global_active_power)
 
 #We plot the Global active power data into an histogram
 hist(powerhouse$Global_active_power, col = "red", main="Global Active Power", xlab= "Global Active Power (kilowatts)")
-
+dev.copy(png, file="plot1.png")
+dev.off()
 
 
 
